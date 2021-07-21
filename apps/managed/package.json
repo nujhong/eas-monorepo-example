@@ -2,7 +2,6 @@
   "private": true,
   "name": "@acme/app-managed",
   "version": "1.0.0",
-  "main": "__generated__/AppEntry.js",
   "scripts": {
     "build": "echo 'Nothing to build'",
     "test": "eslint --ext js,ts,tsx .",
@@ -10,8 +9,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject",
-    "postinstall": "expo-yarn-workspaces postinstall && cd ../.. && yarn build"
+    "eject": "expo eject"
   },
   "dependencies": {
     "@acme/ui": "*",
@@ -31,36 +29,19 @@
     "@acme/babel-preset-expo": "*",
     "@acme/eslint-config": "*",
     "@babel/core": "~7.9.0",
+    "@expo/metro-config": "^0.1.80",
     "@types/react": "~16.9.35",
     "@types/react-dom": "~16.9.8",
     "@types/react-native": "~0.63.2",
+    "expo-yarn-workspaces": "^1.5.2",
     "typescript": "~4.0.0"
   },
   "eslintConfig": {
-    "extends": "@acme/eslint-config",
-    "ignorePatterns": [
-      "__generated__"
-    ]
+    "extends": "@acme/eslint-config"
   },
-  "expo-yarn-workspaces": {
-    "symlinks": [
-      "@unimodules/core",
-      "@unimodules/react-native-adapter",
-      "expo-application",
-      "expo-asset",
-      "expo-constants",
-      "expo-error-recovery",
-      "expo-file-system",
-      "expo-font",
-      "expo-image-loader",
-      "expo-keep-awake",
-      "expo-modules-core",
-      "expo-splash-screen",
-      "expo-structured-headers",
-      "expo-updates-interface",
-      "expo-updates",
-      "unimodules-app-loader",
-      "unimodules-task-manager-interface"
-    ]
+  "resolutions": {
+    "@acme/ui": "portal:../../packages/ui",
+    "@acme/babel-preset-expo": "portal:../../packages/babel",
+    "@acme/eslint-config": "portal:../../packages/eslint"
   }
 }

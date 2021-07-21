@@ -2,7 +2,7 @@
   "expo": {
     "name": "eas-monorepo-app-managed",
     "slug": "eas-monorepo-app-managed",
-    "owner": "bycedric",
+    "owner": "liondigitalsolutions",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
